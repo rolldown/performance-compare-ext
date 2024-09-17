@@ -1,0 +1,16 @@
+{
+  "name": "1000",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build:vite": "vite build",
+    "build:farm": "farm build --config ",
+    "build:rsbuild": "rsbuild build"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {},
+  "dependencies": {}
+}
