@@ -5,10 +5,11 @@
 
 # Benchmark result
 
-> ![note] Environment
->    OS: Linux Ubuntu 22.04 LTS
->    CPU: (32) x64 AMD Ryzen 9 5950X 16-Core Processor
->    Memory: 64 GB
+> [!note]
+> **Environment**  
+> - OS: Linux Ubuntu 22.04 LTS  
+> - CPU: (32) x64 AMD Ryzen 9 5950X 16-Core Processor  
+> - Memory: 64 GB  
 
 ## Command
 run `hyperfine --warmup 1 --runs 3 'bunx vite build' 'bunx rsbuild build' 'bunx farm build'` for each app under `apps/`
