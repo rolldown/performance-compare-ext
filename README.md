@@ -1,11 +1,18 @@
-## Benchmark setup
+# Why not using [performance-compare](https://github.com/farm-fe/performance-compare)
+1. `performance-compare` case is relatively small(1000 modules with only dependency `react` and `react-dom`), 
+it would be pretty easy to exceeds 1000 modules in real world app.
+2. The test cases cannot reflect the changes in build time of the bundler as the application scale increases.
+3. Using `Regex` to match build time in std out is subjective, different bundler may have different measurement method for build time, 
+so we use process executed time to keep measurement consistent.
+
+# Benchmark setup
 1. [bun](https://github.com/oven-sh/bun), use `bunx` to execute package `bin`
 2. [hyperfine](https://github.com/sharkdp/hyperfine) A popular command-line benchmarking tool.
 
 
-## Benchmark result
+# Benchmark result
 run `hyperfine --warmup 1 --runs 3 'bunx vite build' 'bunx rsbuild build' 'bunx farm build'` for each app under `apps/`
-### 1000 modules
+## 1000 modules
 ```bash
 Benchmark 1: bunx vite build
   Time (mean ± σ):     341.7 ms ±   6.7 ms    [User: 685.3 ms, System: 285.7 ms]
@@ -25,7 +32,7 @@ Summary
     2.31 ± 0.05 times faster than 'bunx farm build'
 
 ```
-### 3000 modules
+## 3000 modules
 ```bash
 Benchmark 1: bunx vite build Time (mean ± σ):     558.4 ms ±  17.4 ms    [User: 1324.8 ms, System: 514.0 ms]
   Range (min … max):   539.9 ms … 574.4 ms    3 runs
@@ -45,7 +52,7 @@ Summary
 
 ```
 
-### 5000 modules
+## 5000 modules
 ```bash
 Benchmark 1: bunx vite build
   Time (mean ± σ):     806.0 ms ±  24.8 ms    [User: 1970.6 ms, System: 766.5 ms]
@@ -65,7 +72,7 @@ Summary
     1.90 ± 0.07 times faster than 'bunx rsbuild build'
 
 ```
-### 10000 modules
+## 10000 modules
 
 ```bash
 Benchmark 1: bunx vite build
