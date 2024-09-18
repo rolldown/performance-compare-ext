@@ -41,7 +41,7 @@
 ## Command
 run `hyperfine --warmup 1 --runs 3 'bunx vite build' 'bunx rsbuild build' 'bunx farm build'` for each app under `apps/`
 
-## 1000 modules
+## 2413 modules(1000 component + 1413 modules in node_modules)
 ```bash
 Benchmark 1: bunx vite build
   Time (mean ± σ):     341.7 ms ±   6.7 ms    [User: 685.3 ms, System: 285.7 ms]
@@ -61,7 +61,7 @@ Summary
     2.31 ± 0.05 times faster than 'bunx farm build'
 
 ```
-## 3000 modules
+## 5714 modules(3000 component + 2714 modules in node_modules)
 ```bash
 Benchmark 1: bunx vite build Time (mean ± σ):     558.4 ms ±  17.4 ms    [User: 1324.8 ms, System: 514.0 ms]
   Range (min … max):   539.9 ms … 574.4 ms    3 runs
@@ -81,7 +81,7 @@ Summary
 
 ```
 
-## 5000 modules
+## 9014 modules(5000 component + 4014 modules in node_modules)
 ```bash
 Benchmark 1: bunx vite build
   Time (mean ± σ):     806.0 ms ±  24.8 ms    [User: 1970.6 ms, System: 766.5 ms]
@@ -101,7 +101,7 @@ Summary
     1.90 ± 0.07 times faster than 'bunx rsbuild build'
 
 ```
-## 10000 modules
+## 19014 modules(10000 component + 9014 modules in node_modules)
 
 ```bash
 Benchmark 1: bunx vite build
