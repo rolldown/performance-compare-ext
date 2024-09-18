@@ -1,7 +1,7 @@
 # Benchmark setup
 1. [bun](https://github.com/oven-sh/bun), use `bunx` to execute package `bin`
 > [!note] 
-> **Why bunx?**
+> **Why bunx?**  
 > `bunx` has nearly zero overhead compare execute `node command.js` directly, and for the sake of convenience
 > So you don't need to find each bin path of each package and run `node /from/to/node.js`
 > ```bash
