@@ -1,23 +1,31 @@
 # Benchmark setup
 1. [bun](https://github.com/oven-sh/bun), use `bunx` to execute package `bin`
-> ![note] Why bunx?
+> [!note] 
+> **Why bunx?**
+> `bunx` has nearly zero overhead compare execute `node command.js` directly, and for the sake of convenience
+> So you don't need to find each bin path of each package and run `node /from/to/node.js`
 > ```bash
->Benchmark 1: bunx lint-staged
->  Time (mean ± σ):     124.6 ms ±   3.0 ms    [User: 127.1 ms, System: 50.1 ms]
->  Range (min … max):   121.1 ms … 126.7 ms    3 runs
-> 
+> Benchmark 1: bunx lint-staged
+>   Time (mean ± σ):     122.1 ms ±   1.6 ms    [User: 121.9 ms, System: 46.4 ms]
+>   Range (min … max):   120.4 ms … 123.5 ms    3 runs
+>  
 > Benchmark 2: pnpm run staged
->  Time (mean ± σ):     382.7 ms ±   4.1 ms    [User: 343.3 ms, System: 110.8 ms]
->  Range (min … max):   378.0 ms … 385.7 ms    3 runs
+>  Time (mean ± σ):     383.2 ms ±   1.1 ms    [User: 346.9 ms, System: 99.4 ms]
+>  Range (min … max):   381.9 ms … 384.0 ms    3 runs
 > 
 >Benchmark 3: npx lint-staged
->  Time (mean ± σ):     309.1 ms ±   1.6 ms    [User: 333.4 ms, System: 84.5 ms]
->  Range (min … max):   307.7 ms … 310.8 ms    3 runs
+>  Time (mean ± σ):     312.9 ms ±   1.9 ms    [User: 342.6 ms, System: 85.6 ms]
+>  Range (min … max):   310.8 ms … 314.4 ms    3 runs
+> 
+>Benchmark 4: node ./node_modules/lint-staged/bin/lint-staged.js
+>  Time (mean ± σ):     116.6 ms ±   2.0 ms    [User: 131.6 ms, System: 42.2 ms]
+>>  Range (min … max):   115.2 ms … 118.9 ms    3 runs
 > 
 >Summary
->  'bunx lint-staged' ran
->    2.48 ± 0.06 times faster than 'npx lint-staged'
->    3.07 ± 0.08 times faster than 'pnpm run staged'
+>  'node ./node_modules/lint-staged/bin/lint-staged.js' ran
+>    1.05 ± 0.02 times faster than 'bunx lint-staged'
+>    2.68 ± 0.05 times faster than 'npx lint-staged'
+>    3.29 ± 0.06 times faster than 'pnpm run staged'
 > ```
 2. [hyperfine](https://github.com/sharkdp/hyperfine) A popular command-line benchmarking tool.
 
