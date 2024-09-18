@@ -19,7 +19,7 @@
 > 
 >Benchmark 4: node ./node_modules/lint-staged/bin/lint-staged.js
 >  Time (mean ± σ):     116.6 ms ±   2.0 ms    [User: 131.6 ms, System: 42.2 ms]
->>  Range (min … max):   115.2 ms … 118.9 ms    3 runs
+>  Range (min … max):   115.2 ms … 118.9 ms    3 runs
 > 
 >Summary
 >  'node ./node_modules/lint-staged/bin/lint-staged.js' ran
