@@ -1,25 +1,26 @@
 {
-  "name": "performance-compare-ext",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "packageManager": "pnpm@8.15.7+sha512.c85cd21b6da10332156b1ca2aa79c0a61ee7ad2eb0453b88ab299289e9e8ca93e6091232b25c07cbf61f6df77128d9c849e5c9ac6e44854dbd211c49f3a67adc",
-  "devDependencies": {
-    "rolldown-vite": "0.3.2",
-    "@iconify-icons/material-symbols": "^1.2.58",
-    "@iconify/react": "^5.0.1",
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1",
-    "@rsbuild/core": "1.0.4",
-    "@rsbuild/plugin-react": "1.0.2",
-    "@farmfe/cli": "^1.0.0",
-    "@farmfe/core": "^1.0.3",
-    "@farmfe/plugin-react": "^1.0.0"
-  }
+	"name": "performance-compare-ext",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"staged": "lint-staged"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"packageManager": "pnpm@8.15.7+sha512.c85cd21b6da10332156b1ca2aa79c0a61ee7ad2eb0453b88ab299289e9e8ca93e6091232b25c07cbf61f6df77128d9c849e5c9ac6e44854dbd211c49f3a67adc",
+	"devDependencies": {
+		"@farmfe/cli": "^1.0.0",
+		"@farmfe/core": "^1.0.3",
+		"@farmfe/plugin-react": "^1.0.0",
+		"@iconify-icons/material-symbols": "^1.2.58",
+		"@iconify/react": "^5.0.1",
+		"@rsbuild/core": "1.0.4",
+		"@rsbuild/plugin-react": "1.0.2",
+		"lint-staged": "^15.2.10",
+		"react": "^18.3.1",
+		"react-dom": "^18.3.1",
+		"rolldown-vite": "0.3.2"
+	}
 }

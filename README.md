@@ -1,5 +1,24 @@
 # Benchmark setup
 1. [bun](https://github.com/oven-sh/bun), use `bunx` to execute package `bin`
+> ![note] Why bunx?
+> ```bash
+>Benchmark 1: bunx lint-staged
+>  Time (mean ± σ):     124.6 ms ±   3.0 ms    [User: 127.1 ms, System: 50.1 ms]
+>  Range (min … max):   121.1 ms … 126.7 ms    3 runs
+> 
+> Benchmark 2: pnpm run staged
+>  Time (mean ± σ):     382.7 ms ±   4.1 ms    [User: 343.3 ms, System: 110.8 ms]
+>  Range (min … max):   378.0 ms … 385.7 ms    3 runs
+> 
+>Benchmark 3: npx lint-staged
+>  Time (mean ± σ):     309.1 ms ±   1.6 ms    [User: 333.4 ms, System: 84.5 ms]
+>  Range (min … max):   307.7 ms … 310.8 ms    3 runs
+> 
+>Summary
+>  'bunx lint-staged' ran
+>    2.48 ± 0.06 times faster than 'npx lint-staged'
+>    3.07 ± 0.08 times faster than 'pnpm run staged'
+> ```
 2. [hyperfine](https://github.com/sharkdp/hyperfine) A popular command-line benchmarking tool.
 
 
