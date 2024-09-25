@@ -3,7 +3,7 @@
 > [!note] 
 > **Why bunx?**  
 > `bunx` has nearly zero overhead compare execute `node command.js` directly, and for the sake of convenience
-> So you don't need to find each bin path of each package and run `node /from/to/node.js`
+> So you don't need to find each bin path of each package and run `node /from/to/bin.js`
 > ```bash
 > Benchmark 1: bunx lint-staged
 >   Time (mean ± σ):     122.1 ms ±   1.6 ms    [User: 121.9 ms, System: 46.4 ms]
