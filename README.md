@@ -123,6 +123,23 @@ Summary
 
 ```
 
+### Extra round
+compare `rolldown`  and `esbuild` without html
+using `hyperfine --warmup 1 --runs 3 'bunx rolldown build --config rolldown.config.mjs' 'bunx esbuild --bundle --minify=false  --outdir=dist src/index.jsx'`
+```bash
+Benchmark 1: bunx rolldown build --config rolldown.config.mjs
+  Time (mean ± σ):     627.2 ms ±   3.9 ms    [User: 1983.9 ms, System: 1375.1 ms]
+  Range (min … max):   622.9 ms … 630.5 ms    3 runs
+ 
+Benchmark 2: bunx esbuild --bundle --minify=false  --outdir=dist src/index.jsx
+  Time (mean ± σ):      1.304 s ±  0.083 s    [User: 3.690 s, System: 1.473 s]
+  Range (min … max):    1.236 s …  1.397 s    3 runs
+ 
+Summary
+  'bunx rolldown build --config rolldown.config.mjs' ran
+    2.08 ± 0.13 times faster than 'bunx esbuild --bundle --minify=false  --outdir=dist src/index.jsx'
+```
+
 # Why not using [performance-compare](https://github.com/farm-fe/performance-compare)
 1. `performance-compare` case is relatively small(1000 modules with only dependency `react` and `react-dom`), 
 it would be pretty easy to exceeds 1000 modules in real world app.

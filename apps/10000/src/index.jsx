@@ -8,3 +8,4 @@ ReactDom.createRoot(document.getElementById("root")).render(
 		<App1 />
 	</React.StrictMode>
 );
+
