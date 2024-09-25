@@ -125,19 +125,19 @@ Summary
 
 ### Extra round
 compare `rolldown`  and `esbuild` without html
-using `hyperfine --warmup 1 --runs 3 'bunx rolldown build --config rolldown.config.mjs' 'bunx esbuild --bundle --minify=false  --outdir=dist src/index.jsx'`
+using `hyperfine --warmup 1 --runs 3 'bunx rolldown build --config rolldown.config.mjs' 'bunx esbuild --bundle --minify=false --tree-shaking  --outdir=dist src/index.jsx'`
 ```bash
 Benchmark 1: bunx rolldown build --config rolldown.config.mjs
-  Time (mean ± σ):     627.2 ms ±   3.9 ms    [User: 1983.9 ms, System: 1375.1 ms]
-  Range (min … max):   622.9 ms … 630.5 ms    3 runs
+  Time (mean ± σ):     634.4 ms ±  12.2 ms    [User: 1979.6 ms, System: 1344.5 ms]
+  Range (min … max):   622.9 ms … 647.2 ms    3 runs
  
 Benchmark 2: bunx esbuild --bundle --minify=false  --outdir=dist src/index.jsx
-  Time (mean ± σ):      1.304 s ±  0.083 s    [User: 3.690 s, System: 1.473 s]
-  Range (min … max):    1.236 s …  1.397 s    3 runs
+  Time (mean ± σ):      1.225 s ±  0.024 s    [User: 3.412 s, System: 1.333 s]
+  Range (min … max):    1.199 s …  1.245 s    3 runs
  
 Summary
   'bunx rolldown build --config rolldown.config.mjs' ran
-    2.08 ± 0.13 times faster than 'bunx esbuild --bundle --minify=false  --outdir=dist src/index.jsx'
+    1.93 ± 0.05 times faster than 'bunx esbuild --bundle --minify=false  --outdir=dist src/index.jsx'
 ```
 
 # Why not using [performance-compare](https://github.com/farm-fe/performance-compare)

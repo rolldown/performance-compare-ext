@@ -8,7 +8,7 @@
     "build:farm": "farm build",
     "build:rsbuild": "rsbuild build",
     "build:rolldown": "rolldown build --config rolldown.config.mjs",
-    "build:esbuild": "esbuild --bundle --minify=false  --outdir=dist src/index.jsx"
+    "build:esbuild": "esbuild --bundle --minify=false --tree-shaking=true --outdir=dist src/index.jsx"
   },
   "keywords": [],
   "author": "",
