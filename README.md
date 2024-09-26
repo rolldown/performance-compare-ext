@@ -1,7 +1,7 @@
 # Benchmark setup
 1. `node`(22.7.0), or any node version could use `node --run`
 > [!note]
-> Also you could use `bunx` run command directly instead of `npm scripts`
+> Also you could use `bunx` run command directly instead of `npm scripts`  
 > Both of `bunx` and `node --run` has similar low overhead compare to `pnpm run` and `npm run`
 2. [hyperfine](https://github.com/sharkdp/hyperfine) A popular command-line benchmarking tool.
 
