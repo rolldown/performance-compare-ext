@@ -1,32 +1,5 @@
 # Benchmark setup
-1. [bun](https://github.com/oven-sh/bun), use `bunx` to execute package `bin`
-> [!note] 
-> **Why bunx?**  
-> `bunx` has nearly zero overhead compare execute `node command.js` directly, and for the sake of convenience
-> So you don't need to find each bin path of each package and run `node /from/to/bin.js`
-> ```bash
-> Benchmark 1: bunx lint-staged
->   Time (mean ± σ):     122.1 ms ±   1.6 ms    [User: 121.9 ms, System: 46.4 ms]
->   Range (min … max):   120.4 ms … 123.5 ms    3 runs
->  
-> Benchmark 2: pnpm run staged
->  Time (mean ± σ):     383.2 ms ±   1.1 ms    [User: 346.9 ms, System: 99.4 ms]
->  Range (min … max):   381.9 ms … 384.0 ms    3 runs
-> 
->Benchmark 3: npx lint-staged
->  Time (mean ± σ):     312.9 ms ±   1.9 ms    [User: 342.6 ms, System: 85.6 ms]
->  Range (min … max):   310.8 ms … 314.4 ms    3 runs
-> 
->Benchmark 4: node ./node_modules/lint-staged/bin/lint-staged.js
->  Time (mean ± σ):     116.6 ms ±   2.0 ms    [User: 131.6 ms, System: 42.2 ms]
->  Range (min … max):   115.2 ms … 118.9 ms    3 runs
-> 
->Summary
->  'node ./node_modules/lint-staged/bin/lint-staged.js' ran
->    1.05 ± 0.02 times faster than 'bunx lint-staged'
->    2.68 ± 0.05 times faster than 'npx lint-staged'
->    3.29 ± 0.06 times faster than 'pnpm run staged'
-> ```
+1. `node`(22.7.0)
 2. [hyperfine](https://github.com/sharkdp/hyperfine) A popular command-line benchmarking tool.
 
 
@@ -39,7 +12,7 @@
 > - Memory: 64 GB  
 
 ## Command
-run `hyperfine --warmup 1 --runs 3 'bunx vite build' 'bunx rsbuild build' 'bunx farm build'` for each app under `apps/`
+run `hyperfine --warmup 1 --runs 3 'node --run build:vite' 'node --run build:rsbuild' 'node --run build:farm'` for each app under `apps/`
 
 ## 2413 modules(1000 component + 1413 modules in node_modules)
 ```bash
