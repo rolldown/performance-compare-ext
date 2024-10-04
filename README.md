@@ -100,8 +100,10 @@ Summary
 ```
 
 ### Extra round
-compare `rolldown`  and `esbuild` without html
+
+Comparing `rolldown`  and `esbuild` without html
 using `hyperfine --warmup 1 --runs 3 'node --run build:rolldown' 'node --run build:esbuild'`
+
 ```bash
 Benchmark 1: bunx rolldown build --config rolldown.config.mjs
   Time (mean ± σ):     634.4 ms ±  12.2 ms    [User: 1979.6 ms, System: 1344.5 ms]
@@ -114,6 +116,50 @@ Benchmark 2: bunx esbuild --bundle --minify=false  --outdir=dist src/index.jsx
 Summary
   'bunx rolldown build --config rolldown.config.mjs' ran
     1.93 ± 0.05 times faster than 'bunx esbuild --bundle --minify=false  --outdir=dist src/index.jsx'
+```
+
+### Results on Macs
+
+- 19k modules case (`./apps/10000`)
+- 2023 Macbook Pro / M2 Pro (12 cores - 8 performance and 4 efficiency) / 32GB memory / Node.js v22.7.0
+- `bun build` using Bun v1.1.29
+
+```bash
+hyperfine --warmup 1 --runs 3 'node --run build:vite' 'node --run build:rsbuild' 'node --run build:farm' 'node --run build:rolldown' 'node --run build:esbuild' 'node --run build:bun'
+```
+
+```bash
+Benchmark 1: node --run build:vite
+  Time (mean ± σ):      1.620 s ±  0.037 s    [User: 2.381 s, System: 9.815 s]
+  Range (min … max):    1.586 s …  1.660 s    3 runs
+
+Benchmark 2: node --run build:rsbuild
+  Time (mean ± σ):      2.880 s ±  0.024 s    [User: 5.507 s, System: 10.755 s]
+  Range (min … max):    2.863 s …  2.908 s    3 runs
+
+Benchmark 3: node --run build:farm
+  Time (mean ± σ):      2.222 s ±  0.025 s    [User: 8.091 s, System: 5.401 s]
+  Range (min … max):    2.200 s …  2.249 s    3 runs
+
+Benchmark 4: node --run build:rolldown
+  Time (mean ± σ):     747.5 ms ±  15.8 ms    [User: 1104.8 ms, System: 3890.1 ms]
+  Range (min … max):   734.0 ms … 764.8 ms    3 runs
+
+Benchmark 5: node --run build:esbuild
+  Time (mean ± σ):     867.7 ms ±   5.3 ms    [User: 1844.2 ms, System: 2747.9 ms]
+  Range (min … max):   861.6 ms … 871.5 ms    3 runs
+
+Benchmark 6: node --run build:bun
+  Time (mean ± σ):     843.8 ms ±   6.9 ms    [User: 642.6 ms, System: 2649.9 ms]
+  Range (min … max):   836.7 ms … 850.3 ms    3 runs
+
+Summary
+  node --run build:rolldown ran
+    1.13 ± 0.03 times faster than node --run build:bun
+    1.16 ± 0.03 times faster than node --run build:esbuild
+    2.17 ± 0.07 times faster than node --run build:vite
+    2.97 ± 0.07 times faster than node --run build:farm
+    3.85 ± 0.09 times faster than node --run build:rsbuild
 ```
 
 # Why not using [performance-compare](https://github.com/farm-fe/performance-compare)
