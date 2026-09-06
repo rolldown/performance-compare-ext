@@ -7,7 +7,7 @@
 		"bench": "node bench.mjs"
 	},
 	"dependencies": {
-		"@iconify-icons/material-symbols": "1.2.59",
+		"@iconify-icons/material-symbols": "2.0.1",
 		"@iconify/react": "6.0.2",
 		"react": "19.2.8",
 		"react-dom": "19.2.8"
