@@ -18,7 +18,7 @@
 		"@rollup/plugin-replace": "6.0.3",
 		"@rollup/plugin-terser": "1.0.0",
 		"@rollup/plugin-typescript": "12.3.0",
-		"@rsbuild/core": "2.2.4",
+		"@rsbuild/core": "2.2.5",
 		"@rsbuild/plugin-react": "2.1.0",
 		"@rspack/cli": "2.2.3",
 		"@rspack/core": "2.2.3",
